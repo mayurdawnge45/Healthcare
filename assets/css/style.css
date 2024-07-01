@@ -12085,6 +12085,11 @@ h6>a span,
     font-weight: inherit;
 }
 
+.heading_five {
+    font-weight: 600;
+    font-size: 15px;
+}
+
 h1,
 .heading-one {
     font-size: 76px;
@@ -12733,6 +12738,26 @@ input:focus,
 .list-table tr th,
 .list-table tr td {
     padding: 15px 30px;
+}
+
+.heading-url {
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 166.667%;
+    color: var(--neutral-10);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+    background-color: var(--primary-color-02);
+}
+
+.heading-url:hover {
+    color: var(--neutral-10);
 }
 
 @media (max-width: 1399px) {
@@ -14539,3 +14564,32 @@ footer {
 }
 
 /*# sourceMappingURL=style.css.map */
+/*************************************/
+/* new custom style start from here */
+/*************************************/
+.form_box {
+    display: flex;
+}
+
+.page_title_box {
+    display: flex;
+}
+
+.heading_box {
+    width: 100%;
+}
+
+/* .area_control_box{
+    display: flex;
+    align-items: flex-end;
+} */
+.submit_search {
+    display: flex;
+    border: 0;
+    box-shadow: none;
+    align-items: flex-end;
+}
+
+.submit_search button {
+    padding: 03px 8px;
+}
