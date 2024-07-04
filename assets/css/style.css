@@ -12405,7 +12405,7 @@ textarea {
 
 .btn-1 {
     display: flex;
-    padding: 12px 24px;
+    padding: 5px 24px;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -12429,7 +12429,7 @@ textarea {
 
 .btn-2 {
     display: flex;
-    padding: 12px 24px;
+    padding: 5px 24px;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -12873,8 +12873,8 @@ input:focus,
 
 .form-input-box .form-icon {
     display: flex;
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--neutral-07);
@@ -14579,6 +14579,11 @@ footer {
     width: 100%;
 }
 
+.heading_box h2 {
+    font-size: 22px;
+    padding-bottom: 25px;
+}
+
 /* .area_control_box{
     display: flex;
     align-items: flex-end;
@@ -14592,4 +14597,37 @@ footer {
 
 .submit_search button {
     padding: 03px 8px;
+}
+
+select.select_field {
+    outline: none;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    /* display: block; */
+    width: 100%;
+    /* padding: 0 10px; */
+    color: #c1c1c1;
+    appearance: none;
+    background: url();
+    padding-left: 10px;
+    /* display: none; */
+    font-size: 16px;
+    font-family: Lato, sans-serif;
+    color: var(--neutral-03);
+
+
+}
+
+select.select_field option {
+    background: transparent;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    padding-top: 100px;
+    padding-left: 10px;
+}
+
+ul.list.list_active {
+    opacity: 1;
 }
