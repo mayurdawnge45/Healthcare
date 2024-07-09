@@ -185,19 +185,32 @@
                             <a href="/register-new-patient.html" class="heading-url mb-2">Add New Patient</a>
                         </div>
                         <div class="search_form_box">
-                            <form action="">
+                            <form action="" id="search_form">
                                 <div class="form_box">
                                     <div class="area_control_box">
-                                        <label><input type="radio" name="contact" value="phone"> Mobile Number</label>
-                                        <input type="number" name="" id="">
+                                        <label><input type="radio" name="contact" value="phone">
+                                            Mobile Number</label>
+                                        <div class="form-input-box">
+                                            <i class="fa-solid fa-city form-icon"></i>
+                                            <input type="number" id="mobile_number" name="mobile_number"
+                                                placeholder="Enter Mobile Number" min="" max="" required>
+                                        </div>
                                     </div>
                                     <div class="area_control_box">
                                         <label><input type="radio" name="contact" value="uhid"> UHID </label>
-                                        <input type="number" name="uhid" placeholder="UHID" id="">
+                                        <!-- <input type="number" name="uhid" placeholder="UHID" id=""> -->
+                                        <div class="form-input-box">
+                                            <i class="fa-solid fa-city form-icon"></i>
+                                            <input type="number" name="uhid" placeholder="UHID Number" required>
+                                        </div>
                                     </div>
                                     <div class="area_control_box">
                                         <label><input type="radio" name="contact" value="name">First Name</label>
-                                        <input type="text" name="fname" placeholder="First Name" id="">
+                                        <div class="form-input-box">
+                                            <i class="fa-solid fa-city form-icon"></i>
+                                            <!-- <input type="text" name="fname" placeholder="First Name" id=""> -->
+                                            <input type="text" name="fname" placeholder="First Name" id="" required>
+                                        </div>
                                     </div>
                                     <div class="area_control_box submit_search">
                                         <button class="heading-url submit_search">Search</button>
@@ -207,12 +220,96 @@
                         </div>
                     </div>
 
-                    <div class="d-flex align-items-center gap-sm-4 gap-3 mt-sm-40 mt-4">
+                    <!-- <div class="d-flex align-items-center gap-sm-4 gap-3 mt-sm-40 mt-4">
                         <button class="btn-2 para-1b fw-bold">Submit</button>
                         <button class="btn-1 para-1b fw-bold">Cancel</button>
-                    </div>
+                    </div> -->
                 </div>
+                <!-- ****************************************** -->
+                <!-- main search table start from here -->
+                <!-- ********************************************** -->
+                <table class="list-table" id="itemTable">
+                    <thead>
+                        <tr>
+                            <th class="text-center">UHID</th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png" alt="up-down">
+                                Patient Name
+                            </th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png"
+                                    alt="up-down">Age/Sex
+                            </th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png" alt="up-down">Edit
+                            </th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png" alt="up-down">OPD
+                            </th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png" alt="up-down">IPD
+                            </th>
+                            <th class="sort-devices"><img class="me-10" src="assets/img/up-down.png"
+                                    alt="up-down">Pathology
+                            </th>
+                            <th><img class="me-10" src="assets/img/up-down.png" alt="up-down">Radiology</th>
+                            <!-- <th><img class="me-10" src="assets/img/up-down.png" alt="up-down">Actions</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">14568</td>
+                            <td><a href="admin-patient-info.html">Mr Patient x </a></td>
+                            <td>30</td>
+                            <td class="p-10">
+                                <span class="d-center gap-1">
+                                    <i class="act-icon tpc-2 fa-regular fa-eye icon-bg icon-bgc-2"></i>
+                                    <a href="admin-edit-patient.html"> <i
+                                            class="edit-icon tpc-2 fa-solid fa-pen-to-square icon-bg icon-bgc-2"></i></a>
+                                    <i class="delete-icon tpc-2 fa-solid fa-trash-can icon-bg icon-bgc-2"></i>
+                                </span>
+                            </td>
+                            <td>OPD</td>
+                            <td class="tsc-">IPD</td>
+                            <td class="tsc-">Pathology</td>
+                            <td class="tsc-">Radiology</td>
 
+                        <tr>
+                            <!-- <tr>
+                            <td class="text-center">2</td>
+                            <td><a href="admin-patient-info.html">Mr Patient x </a></td>
+                            <td>30</td>
+                            <td class="p-10">
+                                <span class="d-center gap-3">
+                                    <i class="act-icon tpc-2 fa-regular fa-eye icon-bg icon-bgc-2"></i>
+                                    <a href="admin-edit-patient.html"> <i
+                                            class="edit-icon tpc-2 fa-solid fa-pen-to-square icon-bg icon-bgc-2"></i></a>
+                                    <i class="delete-icon tpc-2 fa-solid fa-trash-can icon-bg icon-bgc-2"></i>
+                                </span>
+                            </td>
+                            <td>OPD</td>
+                            <td class="tsc-">IPD</td>
+                            <td class="tsc-">Pathology</td>
+                            <td class="tsc-">Radiology</td>
+
+                        <tr> -->
+                    </tbody>
+                </table>
+                <!-- pagination start  -->
+                <div class="list-footer d-between bgnc-10 br-brl-sm px-30 py-3">
+                    <span class="para-1b fs-base d-block">Showing 1 to 10 of 14 entries</span>
+                    <ul class="pagination-item">
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)" aria-label="Previous">
+                                <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+                            </a>
+                        </li>
+                        <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:void(0)" aria-label="Next">
+                                <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- pagination end  -->
             </div>
             <!-- main content end -->
 
@@ -231,15 +328,18 @@
 
 
     <!-- jquery -->
-    <script src="assets/js/plugin/jquery-3.7.0.min.js"></script>
-    <!-- bootstrap js  -->
-    <script src="assets/js/plugin/bootstrap.min.js"></script>
-    <!-- nice select  -->
-    <script src="assets/js/plugin/jquery.nice-select.min.js"></script>
-    <!-- chart js  -->
-    <script src="assets/js/plugin/cdn.jsdelivr.net_npm_chart.js"></script>
-    <!-- plugin customize js  -->
-    <script src="assets/js/pluginCustomization.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="assets/jquery-3.7.0.min.js"></script> -->
+
+    <!-- <script src="assets/bootstrap.min.js"></script>
+
+    <script src="assets/jquery.nice-select.min.js"></script>
+
+    <script src="assets/cdn.jsdelivr.net_npm_chart.js"></script>
+
+    <script src="assets/js/pluginCustomization.js"></script> -->
 
     <!-- main js  -->
     <script src="assets/js/main.js"></script>

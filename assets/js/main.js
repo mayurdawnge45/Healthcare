@@ -1,15 +1,15 @@
-/* 
+/*
  ========= main JS documentation ==========================
 
  * theme name: HealthEase Dashboard
  * version: 1.0
  * description: Workplace Html5 Template
  * author: softivus
- * author url: 
+ * author url:
     ==================================================
-    side menu bar with local storage 
+    side menu bar with local storage
     sorting table data
-    action icon show/hide 
+    action icon show/hide
     toggle filter box
     input file and show file name
     small device chat list toggle
@@ -18,9 +18,9 @@
 */
 
 "use strict";
-$(document).ready(function() {
+$(document).ready(function () {
 
-    // side menu bar with local storage 
+    // side menu bar with local storage
     let toggleMenu = document.getElementsByClassName('toggle-menu')
     let sidebar = document.getElementsByClassName('sidebar')
     let contentWrapper = document.getElementsByClassName('content-wrapper')
@@ -49,7 +49,7 @@ $(document).ready(function() {
         activeSmallMenu() // set state of darkMode on page load
     }
 
-    toggleMenu[0].addEventListener('click', function() {
+    toggleMenu[0].addEventListener('click', function () {
         smallMenu = localStorage.getItem('small-menu')
         if (smallMenu === "disabled") {
             activeSmallMenu()
@@ -58,7 +58,7 @@ $(document).ready(function() {
         }
     })
 
-    hideSmallDeviceMenu.addEventListener('click', function() {
+    hideSmallDeviceMenu.addEventListener('click', function () {
         smallMenu = localStorage.getItem('small-menu')
         if (smallMenu === "disabled") {
             activeSmallMenu()
@@ -76,7 +76,7 @@ $(document).ready(function() {
     // sorting table data
     let sortDevices = document.querySelectorAll('.sort-devices')
     for (let i = 0; i < sortDevices.length; i++) {
-        sortDevices[i].addEventListener('click', function() {
+        sortDevices[i].addEventListener('click', function () {
             sortTable(i)
         })
     }
@@ -122,10 +122,10 @@ $(document).ready(function() {
     }
 
 
-    // action icon show/hide 
+    // action icon show/hide
     let actionIcon = document.querySelectorAll('.act-icon')
     for (let i = 0; i < actionIcon.length; i++) {
-        actionIcon[i].addEventListener('click', function() {
+        actionIcon[i].addEventListener('click', function () {
 
             if (actionIcon[i].classList.contains('fa-eye')) {
                 actionIcon[i].classList.remove('fa-eye')
@@ -139,7 +139,7 @@ $(document).ready(function() {
 
 
     // toggle filter box
-    $("#showFilter").click(function() {
+    $("#showFilter").click(function () {
         $(".filter-list").slideToggle();
     });
 
@@ -151,9 +151,9 @@ $(document).ready(function() {
     let showSelectedFile = document.getElementById('showSelectedFile')
 
     if (inputFileBtn) {
-        inputFileBtn.addEventListener('click', function(e) {
+        inputFileBtn.addEventListener('click', function (e) {
             getFile.click()
-            getFile.addEventListener('change', function() {
+            getFile.addEventListener('change', function () {
                 showSelectedFile.innerHTML = this.files[0].name
             })
         })
@@ -165,21 +165,31 @@ $(document).ready(function() {
     const chatList = document.getElementsByClassName('msg-list')[0]
 
     if (toggleChatList) {
-        toggleChatList.addEventListener('click', function() {
+        toggleChatList.addEventListener('click', function () {
             chatList.style.left = chatList.style.left === '0%' ? '-100%' : '0%'
         })
     }
 
 
     //Preloader
-    setTimeout(function() {
+    setTimeout(function () {
         $('#preloader').fadeToggle();
     }, 1000);
 
     // Current Year
     $(".currentYear").text(new Date().getFullYear());
 
+    $('form').submit(function (event) {
+        var mobileNumber = $('#mobile_number').val();
+        var min = parseInt($('#mobile_number').attr('10'));
+        var max = parseInt($('#mobile_number').attr('10'));
 
-
+        if (isNaN(mobileNumber) || mobileNumber < min || mobileNumber > max) {
+            alert('Mobile number must be between ' + min + ' and ' + max + '.');
+            event.preventDefault(); // Prevent form submission
+        }
+        // Additional validation or form submission logic can go here
+    });
+    console.log('test');
 
 });
