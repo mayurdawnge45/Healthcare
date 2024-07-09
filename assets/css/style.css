@@ -14675,4 +14675,6 @@ input[type=number] {
 
 select {
     border: 0;
+    cursor: pointer;
+    color: var(--neutral-02);
 }
